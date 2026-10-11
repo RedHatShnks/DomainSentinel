@@ -25,7 +25,7 @@
 
 Point it at a domain. Get back a folder full of everything public.
 
-```
+
 It takes a domain name and collects public information about it. That is all.
 
 It looks up what subdomains exist by reading public certificate logs. It sends one HTTP request to each subdomain to see if it responds. It checks whether any subdomain points at a third-party service that no longer exists. It downloads archived JavaScript files and scans them for leaked API keys. It queries WHOIS for registration details. It queries DNS for records. It sends the resulting IP addresses to a geolocation API.
@@ -33,11 +33,11 @@ It looks up what subdomains exist by reading public certificate logs. It sends o
 It writes everything into a folder. It does not upload anything. It does not modify anything on the target. It does not try to log in anywhere. It does not run exploits. It does not brute-force. It does not submit forms. It does not execute any code it downloads.
 
 The only traffic sent to the target is ordinary HTTP requests during the live-host and takeover stages. Everything else is a query to a public third-party database.
-```
 
-**✅ Does:** collect public data, probe HTTP, fingerprint infrastructure
 
-**❌ Doesn't:** exploit, log in, brute-force, submit forms, execute JS, modify
+**Does:** collect public data, probe HTTP, fingerprint infrastructure
+
+**Doesn't:** exploit, log in, brute-force, submit forms, execute JS, modify
 
 ---
 
