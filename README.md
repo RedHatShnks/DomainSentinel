@@ -16,28 +16,27 @@
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![keys](https://img.shields.io/badge/API%20keys-not%20required-brightgreen)
 
-*Six stages. One domain. Zero API keys.*
 
 </div>
 
 ---
 
-## ⚡ What it does
+## What DomainSentinel does
 
 Point it at a domain. Get back a folder full of everything public.
 
 ```
-┌───────────────────────────────────────────────────────────────┐
-│  1 · 🌐 Subdomains   →  subfinder + crt.sh + Certspotter       │
-│  2 · 📡 Live hosts   →  httpx (status · title · tech · IP)     │
-│  3 · ⚠️  Takeover    →  subzy (dangling CNAME detection)       │
-│  4 · 🔑 JS secrets   →  Wayback + CDX + regex scan            │
-│  5 · 📖 WHOIS + DNS  →  registrar · SPF · DMARC · MX          │
-│  6 · 🗺️  Geolocation →  city · ISP · ASN per public IP        │
-└───────────────────────────────────────────────────────────────┘
+It takes a domain name and collects public information about it. That is all.
+
+It looks up what subdomains exist by reading public certificate logs. It sends one HTTP request to each subdomain to see if it responds. It checks whether any subdomain points at a third-party service that no longer exists. It downloads archived JavaScript files and scans them for leaked API keys. It queries WHOIS for registration details. It queries DNS for records. It sends the resulting IP addresses to a geolocation API.
+
+It writes everything into a folder. It does not upload anything. It does not modify anything on the target. It does not try to log in anywhere. It does not run exploits. It does not brute-force. It does not submit forms. It does not execute any code it downloads.
+
+The only traffic sent to the target is ordinary HTTP requests during the live-host and takeover stages. Everything else is a query to a public third-party database.
 ```
 
 **✅ Does:** collect public data, probe HTTP, fingerprint infrastructure
+
 **❌ Doesn't:** exploit, log in, brute-force, submit forms, execute JS, modify
 
 ---
@@ -61,12 +60,6 @@ Point it at a domain. Get back a folder full of everything public.
 git clone https://your-host/domainsentinel.git
 cd domainsentinel
 chmod +x DomainSentinel.sh
-```
-
-**Optional — install to PATH:**
-
-```bash
-sudo cp DomainSentinel.sh /usr/local/bin/DomainSentinel
 ```
 
 **Verify the file is intact:**
@@ -151,8 +144,29 @@ still there.
 One directory per scan:
 
 ```
-📁 domainsentinel-results/
-└── example.com/
+📁
+output_base/
+└── <domain>/
+    ├── target_info.txt
+    ├── whois.txt
+    ├── whois_summary.txt
+    ├── dns_records.txt
+    ├── subfinder.txt
+    ├── crtsh.txt
+    ├── subdomains.txt
+    ├── live_hosts.txt
+    ├── live_hosts.jsonl
+    ├── takeover_vuln.txt
+    ├── takeover_subzy_raw.log
+    ├── js_files.txt
+    ├── js_scan_raw.txt
+    ├── secrets.txt
+    ├── secrets_unique.txt
+    ├── ip_geolocation.txt
+    ├── ip_geolocation.json
+    ├── summary.txt
+    └── recon.log
+
 ```
 
 <details>
@@ -214,38 +228,6 @@ Secrets Found        : ✓ None
 Overall Status       : ✅ PASS
 ══════════════════════════════════════════════════════════════════
 ```
-
-> ⚠️ **`PASS` ≠ secure.** It means the executed checks found nothing to
-> review. `REVIEW REQUIRED` appears when takeover candidates or secrets exist.
-
----
-
-
-**Override per-run:**
-
-```bash
-DS_TIMEOUT_LONG=90 ./DomainSentinel.sh example.com
-```
-
----
-
-## 🩺 Troubleshooting
-
-| 🚨 Problem | 🛠️ Fix |
-|:-----------|:-------|
-| `crt.sh HTTP 502` | crt.sh offline. Re-run later. Other sources still work. |
-| `crt.sh HTTP 000` | Network issue reaching crt.sh. |
-| Wrong `httpx` binary | `export PATH="$HOME/go/bin:$PATH" && hash -r` |
-| No subdomains | Domain has no certs, or all CT sources down. |
-| No live hosts | Target doesn't serve HTTP. Try `curl -I https://example.com`. |
-| ip-api rate limit | Wait 60 s. Free tier is 45 req/min. |
-| Scan slow | External sources slow. Every call has a hard timeout. |
-| `permission denied` | `chmod +x DomainSentinel.sh` |
-
-Failed stages explain themselves in their output file with a `# no data:`
-marker. Full details in `recon.log`.
-
----
 
 ## ⚖️ Legal
 
