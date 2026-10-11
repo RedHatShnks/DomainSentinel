@@ -1,10 +1,7 @@
 <div align="center">
 
-```
 <img width="576" height="576" alt="9OuQxbM7fNKYv0O0Q06KnrTnCWj_0Q4umHLGu9R08HOkcvUqzeHoFET7FIc49bgKNEcF4nO2hVTr2ghcz_GBP_lO6IxXq0CxLM5bMP5C3PPOR9roejDEpphkwsxXt9gDZJf7b9M49M6Vo0ukWd8SzpYFDg40iGpjqTEDSls_GQGas6QFZC1EzNxOwLl_HN2K" src="https://github.com/user-attachments/assets/402d8fa9-79fb-41c8-a451-004b9a2cc06d" />
 
-
-```
 
 **Advanced Domain Reconnaissance & OSINT**
 
