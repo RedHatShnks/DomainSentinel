@@ -3,13 +3,13 @@
 <img width="276" height="276" alt="9OuQxbM7fNKYv0O0Q06KnrTnCWj_0Q4umHLGu9R08HOkcvUqzeHoFET7FIc49bgKNEcF4nO2hVTr2ghcz_GBP_lO6IxXq0CxLM5bMP5C3PPOR9roejDEpphkwsxXt9gDZJf7b9M49M6Vo0ukWd8SzpYFDg40iGpjqTEDSls_GQGas6QFZC1EzNxOwLl_HN2K" src="https://github.com/user-attachments/assets/402d8fa9-79fb-41c8-a451-004b9a2cc06d" />
 
 
-**Advanced Domain Reconnaissance & OSINT**
+**Domain Reconnaissance & OSINT**
 
 ![bash](https://img.shields.io/badge/Bash-4.3%2B-4EAA25?logo=gnu-bash&logoColor=white)
 ![platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-2E3440?logo=linux&logoColor=white)
 ![version](https://img.shields.io/badge/version-1.2.4-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![keys](https://img.shields.io/badge/API%20keys-not%20required-brightgreen)
+
 
 
 </div>
@@ -45,15 +45,14 @@ The only traffic sent to the target is ordinary HTTP requests during the live-ho
 | 🧰 Core tools | `curl` `jq` `dig` `whois` `go` |
 | 🤖 Auto-installed | `subfinder` `httpx` `subzy` `waybackurls` |
 
-> 🔑 **No API keys. Ever.**
 
 ---
 
 ## 📦 Install
 
 ```bash
-git clone https://your-host/domainsentinel.git
-cd domainsentinel
+git clone https://github.com/RedHatShnks/DomainSentinel.git
+cd DomainSentinel
 chmod +x DomainSentinel.sh
 ```
 
@@ -69,20 +68,14 @@ bash -n DomainSentinel.sh && echo "✅ syntax OK"
 
 ```bash
 ./DomainSentinel.sh <domain> [output_base]
+./DomainSentinel.sh                # interactive mode
 ```
 
 | Argument | Required |
 |:---------|:--------:|
 | 🎯 `<domain>` | ✅ | — |
 | 📁 `[output_base]` | ✅ |
-**Examples:**
 
-```bash
-./DomainSentinel.sh example.com
-./DomainSentinel.sh example.com scans
-./DomainSentinel.sh example.com /home/kali/recon
-./DomainSentinel.sh                # interactive mode
-```
 
 ### 🎬 Live output
 
@@ -140,27 +133,28 @@ One directory per scan:
 
 ```
 📁
-output_base/
-└── <domain>/
-    ├── target_info.txt
-    ├── whois.txt
-    ├── whois_summary.txt
-    ├── dns_records.txt
-    ├── subfinder.txt
-    ├── crtsh.txt
-    ├── subdomains.txt
-    ├── live_hosts.txt
-    ├── live_hosts.jsonl
-    ├── takeover_vuln.txt
-    ├── takeover_subzy_raw.log
-    ├── js_files.txt
-    ├── js_scan_raw.txt
-    ├── secrets.txt
-    ├── secrets_unique.txt
-    ├── ip_geolocation.txt
-    ├── ip_geolocation.json
-    ├── summary.txt
-    └── recon.log
+DomainSentinel/
+    └──output_base/
+        └── <domain>/
+            ├── target_info.txt
+            ├── whois.txt
+            ├── whois_summary.txt
+            ├── dns_records.txt
+            ├── subfinder.txt
+            ├── crtsh.txt
+            ├── subdomains.txt
+            ├── live_hosts.txt
+            ├── live_hosts.jsonl
+            ├── takeover_vuln.txt
+            ├── takeover_subzy_raw.log
+            ├── js_files.txt
+            ├── js_scan_raw.txt
+            ├── secrets.txt
+            ├── secrets_unique.txt
+            ├── ip_geolocation.txt
+            ├── ip_geolocation.json
+            ├── summary.txt
+            └── recon.log
 
 ```
 
