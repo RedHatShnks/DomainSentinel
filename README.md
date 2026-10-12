@@ -16,15 +16,7 @@
 
 ## What DomainSentinel does
 
-Point it at a domain. Get back a folder full of everything public.
-
-It takes a domain name and collects public information about it. That is all.
-
-It looks up what subdomains exist by reading public certificate logs. It sends one HTTP request to each subdomain to see if it responds. It checks whether any subdomain points at a third-party service that no longer exists. It downloads archived JavaScript files and scans them for leaked authentication material. It queries WHOIS for registration details. It queries DNS for records. It sends the resulting IP addresses to a geolocation API.
-
-It writes everything into a folder. It does not upload anything. It does not modify anything on the target. It does not try to log in anywhere. It does not run exploits. It does not brute-force. It does not submit forms. It does not execute any code it downloads.
-
-The only traffic sent to the target is ordinary HTTP requests during the live-host and takeover stages. Everything else is a query to a public third-party database.
+DomainSentinel is a domain reconnaissance and intelligence tool designed to collect, analyze, and organize publicly available information about a target domain. It provides subdomain enumeration, live host discovery, subdomain takeover checks, WHOIS lookups, IP geolocation, and JavaScript secret scanning to identify potentially exposed API keys, tokens, and other sensitive information. By consolidating these capabilities into a single workflow, DomainSentinel helps security researchers and system administrators map a domain’s external attack surface, uncover potential security risks, and improve overall security visibility. The tool uses public data sources and does not send exploit traffic or actively probe target services.
 
 **Does:** collect public data, probe HTTP, fingerprint infrastructure
 
