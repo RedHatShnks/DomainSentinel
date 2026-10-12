@@ -37,8 +37,6 @@ packages are installed through the detected package manager (`apt`, `dnf`,
 `yum`, `pacman`). Missing Go tools are installed into `~/go/bin`. Nothing is
 installed if it is already present.
 
-No API keys are required for any stage.
-
 ---
 
 ## 📦 Install
