@@ -8,7 +8,6 @@
 ![platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-2E3440?logo=linux&logoColor=white)
 ![version](https://img.shields.io/badge/version-1.3.0-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![keys](https://img.shields.io/badge/API%20keys-not%20required-brightgreen)
 
 </div>
 
