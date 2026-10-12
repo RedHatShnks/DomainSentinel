@@ -159,27 +159,27 @@ One directory per scan:
 
 ```
 DomainSentinel/
-└── output_base/
-    └── <domain>/
-        ├── target_info.txt
-        ├── whois.txt
-        ├── whois_summary.txt
-        ├── dns_records.txt
-        ├── subfinder.txt
-        ├── crtsh.txt
-        ├── subdomains.txt
-        ├── live_hosts.txt
-        ├── live_hosts.jsonl
-        ├── takeover_vuln.txt
-        ├── takeover_subzy_raw.log
-        ├── js_files.txt
-        ├── js_scan_raw.txt
-        ├── secrets.txt
-        ├── secrets_unique.txt
-        ├── ip_geolocation.txt
-        ├── ip_geolocation.json
-        ├── summary.txt
-        └── recon.log
+    └── output_base/
+          └── <domain>/
+                 ├── target_info.txt
+                 ├── whois.txt
+                 ├── whois_summary.txt
+                 ├── dns_records.txt
+                 ├── subfinder.txt
+                 ├── crtsh.txt
+                 ├── subdomains.txt
+                 ├── live_hosts.txt
+                 ├── live_hosts.jsonl
+                 ├── takeover_vuln.txt
+                 ├── takeover_subzy_raw.log
+                 ├── js_files.txt
+                 ├── js_scan_raw.txt
+                 ├── secrets.txt
+                 ├── secrets_unique.txt
+                 ├── ip_geolocation.txt
+                 ├── ip_geolocation.json
+                 ├── summary.txt
+                 └── recon.log
 ```
 
 <details>
