@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-# ==============================================================================
-# DomainSentinel.sh
-# Advanced Domain Reconnaissance & OSINT
-# Version: 1.3.1
-# Usage:   ./DomainSentinel.sh <domain> [output_base]
-#          ./DomainSentinel.sh                     (interactive)
-# ==============================================================================
 
 set -o pipefail
 shopt -s nullglob
